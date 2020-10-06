@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "718817101727",
+    "firebase_url": "https://fire-learn-6add9.firebaseio.com",
+    "project_id": "fire-learn-6add9",
+    "storage_bucket": "fire-learn-6add9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718817101727:android:e9b638d0aa94159c605faa",
+        "android_client_info": {
+          "package_name": "com.example.android.fire_learn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718817101727-okvafrjmmcja2s44mm9o7sftsd7t3ts5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.fire_learn",
+            "certificate_hash": "a734a9dd835b429c22acc75db57f27c351f4a79c"
+          }
+        },
+        {
+          "client_id": "718817101727-pmtj59s8o1mf6eu5ilbae0jsm9i7dsc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWEL_WQWPNtdw5NGb0HiUbtNHVrYe8cE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718817101727-pmtj59s8o1mf6eu5ilbae0jsm9i7dsc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
