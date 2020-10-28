@@ -44,8 +44,7 @@ public class Home extends AppCompatActivity {
         }
         else
         {
-            mVerify.setVisibility(View.GONE);
-            mVerifyAlert.setVisibility(View.GONE);
+
         }
         mVerify.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,9 +8,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +37,7 @@ public class Login extends AppCompatActivity {
     TextView reset_link;
     FirebaseAuth mFirebaseAuth;
     ConstraintLayout layout;
+    CheckBox visiblePass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,20 @@ public class Login extends AppCompatActivity {
         layout=(ConstraintLayout) findViewById(R.id.layout);
         reset_link=(TextView) findViewById(R.id.reset_link);
         lSignUp=(TextView) findViewById(R.id.intentLoginText);
+        visiblePass=(CheckBox) findViewById(R.id.checkbox_loginpass);
+        visiblePass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(!isChecked)
+                {
+                    lPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+                else
+                {
+                    lPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+            }
+        });
         lSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
     CollectionReference reference;
+    CheckBox visibleSignIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +52,24 @@ public class MainActivity extends AppCompatActivity {
         firestore=FirebaseFirestore.getInstance();
         mName=(EditText) findViewById(R.id.create_name);
         mEmail=(EditText) findViewById(R.id.create_email);
+        visibleSignIn=(CheckBox) findViewById(R.id.sign_up_checkbox);
         mPassword=(EditText) findViewById(R.id.create_password);
         mPhoneNum=(EditText) findViewById(R.id.create_phone_num);
         mCreate=(Button) findViewById(R.id.create);
+        visibleSignIn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(!isChecked)
+                {
+                    mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+                else
+                {
+                    mPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+            }
+        });
+
         mCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
